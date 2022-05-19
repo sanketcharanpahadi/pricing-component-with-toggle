@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--very-light-grayish-blue);
+  /* background-image: url(images/bg-top.svg), url(images/bg-bottom.svg); */
+  background-repeat: no-repeat, no-repeat;
+  background-position: top top, bottom bottom;
+  background-size: cover, cover;
+  min-height: 100vh;
+  padding: 8rem 0;
+}
+
+header {
+  margin-bottom: 8rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.2rem;
+  color: var(--grayish-blue);
+  margin-bottom: 4rem;
+}
+
+.toggle {
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.anually,
+.monthly {
+  font-size: 1.5rem;
+  color: var(--light-grayish-blue);
+}
+
+.toggle-bar {
+  width: 5.5rem;
+  height: 3.2rem;
+  background-color: hsl(237, 63%, 64%);
+  border-radius: 1.6rem;
+  position: relative;
+}
+
+.circle {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.5rem;
+}
+
+/* main section */
+
+.pricing-container {
+  gap: 3.2rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 3rem;
+  width: 340px;
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.1rem 0.9rem var(--light-grayish-blue);
+}
+
+.pricing-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--grayish-blue);
+  margin-bottom: 2.2rem;
+}
+
+.price {
+  font-size: 7rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--dark-grayish-blue);
+}
+
+.dollar {
+  font-size: 4rem;
+}
+
+.benefits {
+  margin-bottom: 3.5rem;
+}
+
+.benefits li {
+  text-align: center;
+  color: var(--grayish-blue);
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--dark-grayish-blue);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card .benefits li:first-of-type {
+  border-top: 1px solid var(--grayish-blue);
+}
+
+.card:nth-child(even) {
+  background-image: linear-gradient(
+    to bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+}
+
+.professional .benefits li,
+.professional .pricing-title,
+.professional .price {
+  color: #fff;
+}
+
+.professional .cta {
+  background-color: #fff;
+  background-image: none;
+  color: hsl(237, 63%, 64%);
+}
+
+.professional ul li {
+  border-color: #fff !important;
+}
+
+.cta {
+  display: block;
+  margin: 0 auto;
+  background-color: blue;
+  color: #fff;
+  text-align: center;
+  padding: 1.3rem;
+  font-size: 1.3rem;
+  background-image: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  letter-spacing: 0.2rem;
+}
+
+/* utilities */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+/* media query */
+
+@media (min-width: 800px) {
+  .pricing-container {
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+  }
+
+  .card {
+    padding: 3rem 4.5rem;
+  }
+
+  .basic {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .master {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card.professional {
+    padding: 5rem 4rem;
+  }
+
+  .professional {
+    transform: scaleY(1.04);
+  }
+
+  .master,
+  .basic {
+    height: fit-content;
+  }
+}
